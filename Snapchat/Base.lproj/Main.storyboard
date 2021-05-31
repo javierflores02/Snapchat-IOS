@@ -61,15 +61,29 @@
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NlL-Tp-N7G"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO1-O3-B4U">
+                                <rect key="frame" x="107" y="524" width="200" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EMf-9F-tmd"/>
+                                </constraints>
+                                <state key="normal" title="  Iniciar sesion" image="google.png">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="iniciarSesionGoogleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIE-bf-4QJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wpO-mb-BsF" firstAttribute="top" secondItem="2Ro-BJ-xAV" secondAttribute="bottom" constant="25" id="2b1-0p-H8w"/>
                             <constraint firstItem="2Ro-BJ-xAV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2C-YM-lDu"/>
                             <constraint firstItem="L1u-Cb-vnv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HIx-hB-Yw6"/>
+                            <constraint firstItem="PO1-O3-B4U" firstAttribute="top" secondItem="j3E-Kh-cxN" secondAttribute="bottom" constant="26" id="KHJ-Ne-lfY"/>
                             <constraint firstItem="mdD-J2-ta2" firstAttribute="top" secondItem="wpO-mb-BsF" secondAttribute="bottom" constant="25" id="OKd-f9-Gep"/>
                             <constraint firstItem="wpO-mb-BsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jny-pS-tnT"/>
                             <constraint firstItem="otw-Ac-Wpo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pan-2b-NFf"/>
+                            <constraint firstItem="PO1-O3-B4U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qmZ-Cx-Oou"/>
                             <constraint firstItem="2Ro-BJ-xAV" firstAttribute="top" secondItem="L1u-Cb-vnv" secondAttribute="bottom" constant="25" id="saV-uq-bnA"/>
                             <constraint firstItem="j3E-Kh-cxN" firstAttribute="top" secondItem="mdD-J2-ta2" secondAttribute="bottom" constant="30" id="tf8-EN-sMf"/>
                             <constraint firstItem="j3E-Kh-cxN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tyM-U2-n5J"/>
@@ -90,6 +104,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="google.png" width="18" height="18"/>
         <image name="user" width="147" height="173"/>
     </resources>
 </document>
