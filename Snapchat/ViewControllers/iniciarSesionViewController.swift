@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import FirebaseDatabase
 
 class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
 
@@ -28,8 +29,24 @@ class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
             print("Intentando Iniciar Sesion")
             if error != nil{
                 print("Se presentó el siguiente error: \(error!)")
+                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {(user,error) in
+                    print("Intentando crear un usuario")
+                    if error != nil{
+                        print("Se presentó el siguiente error al crear el usuario: \(error)")
+                    }else{
+                        print("El usuario fué creado exitosamente")
+                        Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
+                        
+                        let alerta = UIAlertController(title: "Creación de Usuario", message: "Usuario \(self.emailTextField.text!) se creo correctamente.", preferredStyle: .alert)
+                        let btnOK = UIAlertAction(title: "Aceptar", style: .default, handler: {(UIAlertAction) in
+                            self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)})
+                        alerta.addAction(btnOK)
+                        self.present(alerta, animated: true, completion: nil)
+                    }
+                })
             }else{
                 print("Inicio de sesión exitoso")
+                self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
             }
         }
     }
